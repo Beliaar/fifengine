@@ -131,7 +131,7 @@ after_build:
   - xcopy /Y /S "C:\projects\fifengine-dependencies\includes\lib\x86\*.dll" "%APPVEYOR_BUILD_FOLDER%\engine\python\fife\"
   - cd %APPVEYOR_BUILD_FOLDER%
   - python setup.py set_metadata --version=0.4.0 bdist_msi --target-version="%PYTHON_VERSION%"
-  - python setup.py set_metadata --version=0.4.0 bdist_dumb --target-version="%PYTHON_VERSION%-archive"
+  - python setup.py set_metadata --version=0.4.0 bdist_dumb --format=zip"
   - dir %APPVEYOR_BUILD_FOLDER%\dist
   - appveyor PushArtifact "%APPVEYOR_BUILD_FOLDER%\dist\libfife-0.4.0.win32-py%PYTHON_VERSION%.msi"
   - appveyor PushArtifact "%APPVEYOR_BUILD_FOLDER%\dist\libfife-0.4.0.win32-py%PYTHON_VERSION%-archive*"
