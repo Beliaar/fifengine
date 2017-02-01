@@ -133,18 +133,18 @@ after_build:
   - python setup.py set_metadata --version=0.4.0 bdist_msi --target-version="%PYTHON_VERSION%"
   - python setup.py set_metadata --version=0.4.0 bdist_dumb --format=zip"
   - dir %APPVEYOR_BUILD_FOLDER%\dist
-  - appveyor PushArtifact "%APPVEYOR_BUILD_FOLDER%\dist\libfife-0.4.0.win32-py%PYTHON_VERSION%.msi"
+  - appveyor PushArtifact "%APPVEYOR_BUILD_FOLDER%\dist\libfife-0.4.0.win32-py*.msi"
   - appveyor PushArtifact "%APPVEYOR_BUILD_FOLDER%\dist\libfife-0.4.0.win32.zip"
 
   - dir C:\projects\build /s
   - dir "%APPVEYOR_BUILD_FOLDER%\engine\python\fife\" /s
 
 artifacts:
-  - path: 'libfife-dependencies-%APPVEYOR_BUILD_VERSION%-%COMPILER%-%platform%.zip'
+  - path: 'libfife-dependencies-*.zip'
     name: Dependencies
-  - path: 'libfife-%APPVEYOR_BUILD_VERSION%-%COMPILER%-%platform%.zip'
+  - path: 'libfife-*.zip'
     name: LibFife
-  - path: 'dist\libfife-0.4.0.win32-py%PYTHON_VERSION%.msi'
+  - path: 'dist\libfife-*.msi'
     name: Python27Installer
   - path: 'dist\libfife-0.4.0.win32.zip'
     name: Python27
