@@ -147,7 +147,7 @@ artifacts:
   - path: 'dist\libfife-0.4.0.win32-py%PYTHON_VERSION%.msi'
     name: Python27Installer
   - path: 'dist\libfife-0.4.0.win32.zip'
-    name: Python27Non-Installer-file
+    name: Python27
 
 # deploy to Github Releases on tag push
 deploy:
@@ -155,7 +155,7 @@ deploy:
   release: 'Fifengine $(APPVEYOR_REPO_TAG_NAME)'
   tag: $(APPVEYOR_REPO_TAG_NAME)
   description: '[**Changelog**](https://github.com/fifengine/fifengine/blob/master/CHANGELOG.md)'
-  artifact: Dependencies, LibFife, Python27Installer 
+  artifact: Dependencies, LibFife, Python27Installer, Python27
   draft: false
   prerelease: false
   on:
