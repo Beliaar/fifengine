@@ -1,11 +1,6 @@
 # Build worker image (VM template)
 image: Visual Studio 2015
 
-branches:
-  only:
-  - master
-  - python3
-
 clone_depth: 5
 
 version: '{build}'
@@ -151,7 +146,7 @@ artifacts:
     name: LibFife
   - path: 'dist\libfife-0.4.0.win32-py%PYTHON_VERSION%.msi'
     name: Python27Installer
-    path: 'dist\libfife-0.4.0.win32-py%PYTHON_VERSION%-archive*'
+  - path: 'dist\libfife-0.4.0.win32-py%PYTHON_VERSION%-archive*'
     name: Python27Non-Installer-file
 
 # deploy to Github Releases on tag push
